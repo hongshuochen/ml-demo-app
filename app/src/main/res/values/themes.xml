@@ -1,0 +1,5 @@
+<resources>
+    <!-- Full-screen, no action bar. Uses the framework Material theme so no
+         AppCompat/Material dependency is required. -->
+    <style name="Theme.TFLiteClassifier" parent="@android:style/Theme.Material.NoActionBar" />
+</resources>
