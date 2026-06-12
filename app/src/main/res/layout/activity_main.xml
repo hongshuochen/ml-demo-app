@@ -9,17 +9,79 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Per-frame prediction overlay. -->
-    <TextView
-        android:id="@+id/resultText"
+    <!-- Detection boxes are drawn here, on top of the preview. -->
+    <com.example.tfliteclassifier.OverlayView
+        android:id="@+id/overlayView"
         android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Status / results readout (top). -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="#A6000000"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_status"
         android:fontFamily="monospace"
-        android:padding="16dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="14sp"
         android:text="@string/waiting" />
+
+    <!-- Model-selection segmented control (bottom, floating). -->
+    <LinearLayout
+        android:id="@+id/modeSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/bg_selector_container"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/segClassify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="10dp"
+            android:text="@string/mode_classify"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/segDetect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="10dp"
+            android:text="@string/mode_detect"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/segOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="10dp"
+            android:text="@string/mode_off"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -2,5 +2,15 @@
     <string name="app_name">TFLite Classifier</string>
     <string name="waiting">Starting camera…</string>
     <string name="camera_permission_required">Camera permission is required to run live classification.</string>
-    <string name="model_load_failed">Could not load model.tflite from assets.\n%1$s</string>
+    <string name="model_load_failed">Could not load model.\n%1$s</string>
+
+    <!-- Mode selector -->
+    <string name="mode_classify">Classify</string>
+    <string name="mode_detect">Detect</string>
+    <string name="mode_off">Off</string>
+
+    <!-- Status messages -->
+    <string name="status_off">Camera only — no model running</string>
+    <string name="loading_mode">Loading %1$s…</string>
+    <string name="model_ready">%1$s ready</string>
 </resources>
